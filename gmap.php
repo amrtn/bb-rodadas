@@ -65,7 +65,7 @@ function show_change_position_map($w,$h) {
 
         <div id="map_position" style="width: <?php echo $map_width;?>px; height: <?php echo $map_height;?>px"></div>
         <div id="map_help">
-            <p>Esta es una información pública y opcional. Úsalo solo si quieres aparecer en el mapa de usuarios del foro. Busca el sitio donde vives y pincha encima. Esta información se guardará cuando pulses el botón "Update Profile" al final de la página.</p>
+            <p>Esta es una información pública y opcional. Úsalo solo si quieres aparecer en el mapa de usuarios del foro. Busca el sitio donde vives y pincha encima. Esta información se guardará cuando pulses el botón <strong>"Actualizar Perfil"</strong> al final de la página.</p>
             <p><strong>IMPORTANTE:</strong> Hasta que no guardes por primera vez no aparecerás en el mapa común. Por ahora una vez guardado el cachirulo no se puede borrar del todo :( Si quieres dejar de aparecer en el mapa colócate en Hawai o escríbenos.</p>
         </div>
         <div class="clear"></div>
