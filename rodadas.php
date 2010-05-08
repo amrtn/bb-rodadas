@@ -56,7 +56,12 @@ Author URI: http://rodadas.net/avo/
 //
 // google maps api key for http://www.rodadas.net
 // ABQIAAAAIcZoQCVZuqlQzhokQridkBRKc_-lNaW2ygUbY6a6-ZDBClPfHBRnfQBw3fpcEP4OzTwMAwXBDZp7kw
-define(GMAPS_KEY,"ABQIAAAAIcZoQCVZuqlQzhokQridkBRKc_-lNaW2ygUbY6a6-ZDBClPfHBRnfQBw3fpcEP4OzTwMAwXBDZp7kw");
+// define(GMAPS_KEY,"ABQIAAAAIcZoQCVZuqlQzhokQridkBRKc_-lNaW2ygUbY6a6-ZDBClPfHBRnfQBw3fpcEP4OzTwMAwXBDZp7kw");
+//
+// google maps api key for http://192.168.0.1
+// ABQIAAAAIcZoQCVZuqlQzhokQridkBTEz2mHoLTflZ7sfXvtY7zFZp0FVBSGnhI8EN2ef6XSLbrA4BKgT4T46A
+define(GMAPS_KEY,"ABQIAAAAIcZoQCVZuqlQzhokQridkBTEz2mHoLTflZ7sfXvtY7zFZp0FVBSGnhI8EN2ef6XSLbrA4BKgT4T46A");
+
 
 require_once('gmap.php');
 require_once('fullusermap.php');

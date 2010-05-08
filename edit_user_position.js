@@ -3,14 +3,19 @@
  * and open the template in the editor.
  */
 
-
 var map;
-load();
+jQuery(document).ready(function(){
+    load();
+    jQuery('form').submit(function(){
+        submitClick();
+    });
+});
+
 function load(path) {
     if (GBrowserIsCompatible()) {
-        var lat = document.getElementById('lblLat').value;
-        var lng = document.getElementById('lblLong').value;
-        map = new GMap2(document.getElementById('map_position'));
+        var lat = jQuery('#lblLat').val();
+        var lng = jQuery('#lblLong').val();
+        map = new GMap2(jQuery('#map_position').get(0));
         map.enableScrollWheelZoom();
         map.addControl(new GLargeMapControl());
         map.addControl(new GMapTypeControl());
@@ -22,50 +27,35 @@ function load(path) {
 }
 
 function mapClickFunc(marker, point) {
-    document.getElementById('lblLat').value = point.lat().toFixed(5);
-    document.getElementById('lblLong').value = point.lng().toFixed(5);
+    jQuery('#lblLat').val(point.lat().toFixed(5));
+    jQuery('#lblLong').val(point.lng().toFixed(5));
     map.clearOverlays();
     map.addOverlay(new GMarker(point));
 }
 
-function AjaxMap()
-{
-        var xmlhttp=false;
-        try
-        {
-                xmlhttp = new ActiveXObject("Msxml2.XMLHTTP");
-        } catch (e) {
-                try
-                {
-                        xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                } catch (E) {
-                        xmlhttp = false;
-                }
-        }
 
-        if (!xmlhttp && typeof XMLHttpRequest!='undefined')
-        {
-                xmlhttp = new XMLHttpRequest();
-        }
-        return xmlhttp;
-}
 
-function submitClick(path) {
-    var lat = document.getElementById("lblLat").value;
-    var lon = document.getElementById("lblLong").value;
-    var user = document.getElementById("uid") .value;
-    var url = path+"/ajax/process_position.php?uid="+user+"&lat="+lat+"&lon="+lon;
-    var target = document.getElementById("map_position_result");
-    target.innerHTML = "<div id='map_loading'><img src='"+path+"/assets/ajax-loader.gif'/></div>"
-    var ajax = AjaxMap();
-    ajax.open("GET",url,true);
-    ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    ajax.onreadystatechange=function() {
-        if (ajax.readyState==4) {
-            target.innerHTML = ajax.responseText;
+function submitClick() {
+    var basepath = '../../bb-plugins/rodadas';
+    var lat = jQuery('#lblLat').val();
+    var lon = jQuery('#lblLong').val();
+    var user = jQuery('#uid') .val();
+    jQuery('#map_position_result').empty()
+                            .append("<div id='map_loading'><img src='"+basepath+"/assets/ajax-loader.gif'/></div>");
+
+    jQuery.ajax({
+        'type': 'GET',
+        'url': basepath+'/ajax/process_position.php' ,
+        'data': {
+            'uid': user, 
+            'lat': lat,
+            'lon': lon
+        },
+        'dataType': 'text',
+        'success': function(data) {
+            jQuery('#map_position_result').empty().append(data);
         }
-    }
-    ajax.send('')
+    });
 }
 
 

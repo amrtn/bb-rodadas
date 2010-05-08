@@ -28,11 +28,7 @@ function show_change_position_map($w,$h) {
     // Usuario
     $uid = $user->ID;
 
-    // google maps api key for http://192.168.9.181
-    // ABQIAAAAIcZoQCVZuqlQzhokQridkBSNZ6w0dVxZwyFs4zb6YzX9pzNLMhRCD3FphC0LOWbqpvJ_YzEFPHiOTg
 
-    // google maps api key for http://192.168.1.181
-    // ABQIAAAAIcZoQCVZuqlQzhokQridkBTGcMnEy0mLuqOSZTn9g3sctfWNzhRxhdZbSZOUjPnfEI8Kc8HCmYsUDQ
     ?>
     <style type="text/css">
         /* Mapped
@@ -69,24 +65,14 @@ function show_change_position_map($w,$h) {
 
         <div id="map_position" style="width: <?php echo $map_width;?>px; height: <?php echo $map_height;?>px"></div>
         <div id="map_help">
-            <p>
-Lechon 1:
-
-Esta es una información pública y opcional. Úsalo solo si quieres aparecer en el mapa de usuarios del foro.
-
-Busca el sitio donde vives y coloca el cachirulo rojo encima. Después pincha en 'Guardar posición'. Lo puedes mover y guardar tantas veces como quieras para actualizar tu posición.
-
-IMPORTANTE: Hasta que no guardes por primera vez no aparecerás en el mapa común. Por ahora una vez guardado el cachirulo no se puede borrar del todo :( Si quieres dejar de aparecer en el mapa colócate en Hawai o escríbenos.
-            </p>
+            <p>Esta es una información pública y opcional. Úsalo solo si quieres aparecer en el mapa de usuarios del foro. Busca el sitio donde vives y coloca el cachirulo rojo encima. Esta información se guardará cuando pulses el botón "Update Profile" al final de la página.</p>
+            <p><strong>IMPORTANTE:</strong> Hasta que no guardes por primera vez no aparecerás en el mapa común. Por ahora una vez guardado el cachirulo no se puede borrar del todo :( Si quieres dejar de aparecer en el mapa colócate en Hawai o escríbenos.</p>
         </div>
         <div class="clear"></div>
         <div id="map_buttons">
-            <form id="user_location_form" action="http://localhost/foro/bb-plugins/rodadas/process_position.php" method="get">
-                <input type="hidden" id="uid" name="uid" value="<?php if(isset($uid)) echo $uid;?>"/>
-                <input type="hidden" id="lblLat" name="lat" value="<?php if(isset($latmap)) echo $latmap; else echo 0;?>"/>
-                <input type="hidden" id="lblLong" name="lon" value="<?php if(isset($longmap)) echo $longmap; else echo 0;?>"/>
-                <input onclick='submitClick("<?php echo $user_position_path;?>")' type="button" id="update_position" value="Guardar Ubicación" />
-            </form>
+            <input type="hidden" id="uid" name="uid" value="<?php if(isset($uid)) echo $uid;?>"/>
+            <input type="hidden" id="lblLat" name="lat" value="<?php if(isset($latmap)) echo $latmap; else echo 0;?>"/>
+            <input type="hidden" id="lblLong" name="lon" value="<?php if(isset($longmap)) echo $longmap; else echo 0;?>"/>
         </div>
 
         <div id="map_position_result"></div>
