@@ -1,0 +1,6 @@
+[31-Aug-2009 00:57:54] PHP Fatal error:  Call to undefined function  bb_get_option() in /home/avoyali/public_html/foro/bb-plugins/rodadas/gmap.php on line 5
+[31-Aug-2009 01:04:06] PHP Fatal error:  Call to undefined function  bb_get_option() in /home/avoyali/public_html/foro/bb-plugins/rodadas/gmap.php on line 5
+[31-Aug-2009 01:34:07] PHP Fatal error:  Call to undefined function  bb_get_option() in /home/avoyali/public_html/foro/bb-plugins/rodadas/fullusermap.php on line 6
+[01-Nov-2009 07:45:55] PHP Fatal error:  Call to undefined function  bb_get_option() in /home/avoyali/public_html/foro/bb-plugins/rodadas/gmap.php on line 5
+[01-Nov-2009 07:49:58] PHP Fatal error:  Call to undefined function  bb_get_option() in /home/avoyali/public_html/foro/bb-plugins/rodadas/gmap.php on line 5
+[01-Nov-2009 07:55:35] PHP Fatal error:  Call to undefined function  bb_get_option() in /home/avoyali/public_html/foro/bb-plugins/rodadas/fullusermap.php on line 6
